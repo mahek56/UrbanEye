@@ -1,0 +1,143 @@
+/* ── StatusBar ─────────────────────────────────────────────── */
+.statusbar {
+  height: var(--statusbar-h);
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 24px;
+  flex-shrink: 0;
+  border-bottom: 2px solid var(--rust);
+}
+
+/* Left: wordmark area */
+.statusbar__wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.statusbar__title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--canvas);
+  letter-spacing: 0.04em;
+}
+
+.statusbar__subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--rust-light);
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  padding-bottom: 1px;
+}
+
+/* Right: status indicators */
+.statusbar__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.statusbar__stat {
+  text-align: right;
+}
+
+.statusbar__stat-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.statusbar__stat-value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--canvas);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.statusbar__live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--status-live);
+  animation: pulse-live 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.statusbar__divider {
+  width: 1px;
+  height: 24px;
+  background: #3A3020;
+}
+
+/* ── MapView ───────────────────────────────────────────────── */
+.mapview-wrapper {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.mapview-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Warm overlay to tint tiles toward canvas tone */
+.mapview-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 230, 200, 0.12);
+  pointer-events: none;
+  z-index: 400;
+}
+
+/* Bus glyph div icon */
+.bus-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 14px;
+  background: var(--ink);
+  color: var(--canvas);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 2px;
+  border: 1.5px solid #8C6A3A;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 2px;
+}
+
+/* Map scale / coordinates display */
+.mapview-coords {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 500;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--ink-muted);
+  background: rgba(237, 232, 220, 0.88);
+  padding: 4px 8px;
+  border: 1px solid var(--divider);
+  pointer-events: none;
+  letter-spacing: 0.06em;
+}
