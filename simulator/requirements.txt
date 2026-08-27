@@ -1,0 +1,6 @@
+# UrbanEye Simulator — Python dependencies
+#
+# ultralytics is already a dep from /edge — listed here for completeness
+# so `pip install -r requirements.txt` from /simulator gives a self-contained install.
+requests>=2.31.0
+ultralytics>=8.0.0
