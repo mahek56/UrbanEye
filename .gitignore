@@ -1,0 +1,10 @@
+edge/data/*
+!edge/data/data.yaml
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+runs/
+*.pt
+.env
