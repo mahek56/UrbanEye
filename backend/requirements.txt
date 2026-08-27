@@ -1,0 +1,11 @@
+fastapi>=0.111.0          # Web framework
+uvicorn[standard]>=0.30.0 # ASGI server
+pydantic>=2.7.0           # Data validation
+pydantic-settings>=2.3.0  # Settings from .env
+sqlalchemy>=2.0.30        # Async ORM
+asyncpg>=0.29.0           # Async PostgreSQL driver (required by SQLAlchemy async)
+geoalchemy2>=0.15.0       # PostGIS column type + ST_* function wrappers
+psycopg2-binary>=2.9.9    # Sync driver (used by GeoAlchemy2 DDL helpers at startup)
+pytest>=8.2.0             # Test runner
+pytest-asyncio>=0.23.0    # Async test support
+httpx>=0.27.0             # Async HTTP client for FastAPI TestClient
