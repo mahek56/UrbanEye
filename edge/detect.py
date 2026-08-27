@@ -1,6 +1,11 @@
 from ultralytics import YOLO
-from preprocess import preprocess_image
 import os
+import sys
+
+# Ensure local edge directory is in python path for resolving imports
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from preprocess import preprocess_image
 
 # Map YOLO class IDs to API event types
 # Default YOLOv8 models usually have 80 COCO classes, but our fine-tuned model 
